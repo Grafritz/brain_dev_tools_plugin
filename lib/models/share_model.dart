@@ -16,7 +16,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
 import 'package:launch_app_store/launch_app_store.dart';
-import 'package:path/path.dart' show join;
+import 'package:path/path.dart';// show join;
 import 'package:path_provider/path_provider.dart';
 import 'package:share_plus/share_plus.dart';
 
