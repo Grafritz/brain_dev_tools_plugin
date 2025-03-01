@@ -1,6 +1,6 @@
 // import 'package:brain_dev_tools/tools/check_platform.dart';
-import 'package:brain_dev_tools/tools/constant.dart';
-import 'package:brain_dev_tools/tools/enum/enum.dart';
+// import 'package:brain_dev_tools/tools/constant.dart';
+// import 'package:brain_dev_tools/tools/enum/enum.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 // import 'package:in_app_review/in_app_review.dart';
@@ -9,11 +9,11 @@ class InAppReviewToolsController  extends GetxController implements GetxService
 {
   //region [ ATTRIBUTS ]
   // final InAppReview inAppReview = InAppReview.instance;
-  String appStoreId = Constant.appStoreIdIdentifierCCG;
-  String microsoftStoreId = '';
+  // String appStoreId = Constant.appStoreIdIdentifierCCG;
+  // String microsoftStoreId = '';
 
-  Availability _availability = Availability.loading;
-  Availability get availability => _availability;
+  // Availability _availability = Availability.loading;
+  // Availability get availability => _availability;
   //endregion
 
   InAppReviewToolsController(){
@@ -34,7 +34,7 @@ class InAppReviewToolsController  extends GetxController implements GetxService
         //     ? Availability.available
         //     : Availability.unavailable;
       } catch (_) {
-        _availability = Availability.unavailable;
+        // _availability = Availability.unavailable;
       }
       update();
     });
