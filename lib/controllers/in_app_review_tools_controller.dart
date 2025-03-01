@@ -1,4 +1,4 @@
-import 'package:brain_dev_tools/tools/check_platform.dart';
+// import 'package:brain_dev_tools/tools/check_platform.dart';
 import 'package:brain_dev_tools/tools/constant.dart';
 import 'package:brain_dev_tools/tools/enum/enum.dart';
 import 'package:flutter/material.dart';
