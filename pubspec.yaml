@@ -3,6 +3,10 @@ description: "A new Flutter project."
 version: 1.0.0
 homepage: https://github.com/Grafritz/brain_dev_tools_plugin.git
 
+#  dart pub publish --dry-run   #// Vérifier avant chaque nouvelle version
+#  dart pub login
+#  dart pub publish            # Publier la mise à jour
+
 environment:
   sdk: ^3.7.0
   flutter: '>=3.3.0'
