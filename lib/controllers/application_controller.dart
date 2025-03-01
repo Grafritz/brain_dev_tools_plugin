@@ -10,7 +10,7 @@ import 'package:brain_dev_tools/models/security/device_app_version_model.dart';
 import 'package:brain_dev_tools/models/settings_model.dart';
 import 'package:brain_dev_tools/tools/check_platform.dart';
 import 'package:brain_dev_tools/tools/constant.dart';
-import 'package:brain_dev_tools/tools/my_launcher.dart';
+// import 'package:brain_dev_tools/tools/my_launcher.dart';
 import 'package:brain_dev_tools/tools/tools_log.dart';
 import 'package:brain_dev_tools/tools/validation/type_safe_conversion.dart';
 import 'package:flutter/material.dart';
@@ -359,7 +359,7 @@ class ApplicationController extends GetxController implements GetxService {
 //endregion
 
 //region [  ]
-  openAppLSB() async {
+  /*openAppLSB() async {
     try {
       if (!checkPlatform.isMobile) {
         await MyLauncher.launchInBrowser(Constant.urlWebSiteLaBible);
@@ -375,11 +375,11 @@ class ApplicationController extends GetxController implements GetxService {
       // }
       logError(ex);
     }
-  }
+  }*/
 // endregion
 
   //region [  ]
-  openAppCCG() async {
+  /*openAppCCG() async {
     try {
       if (!CheckPlatform().isMobile) {
         await MyLauncher.launchInBrowser( Constant.urlWebSiteChantCCG);
@@ -394,6 +394,6 @@ class ApplicationController extends GetxController implements GetxService {
       //await MyLauncher.launchInBrowser(Constant.urlAppleOrGoogleStoreCCG());
       logError(ex);
     }
-  }
+  }*/
 // endregion
 }

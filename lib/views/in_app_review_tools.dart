@@ -1,7 +1,7 @@
-import 'package:brain_dev_tools/tools/check_platform.dart';
+// import 'package:brain_dev_tools/tools/check_platform.dart';
 import 'package:brain_dev_tools/tools/enum/enum.dart';
 import 'package:flutter/material.dart';
-import 'package:in_app_review/in_app_review.dart';
+// import 'package:in_app_review/in_app_review.dart';
 
 class InAppReviewTools extends StatefulWidget {
   const InAppReviewTools({super.key});
@@ -11,7 +11,7 @@ class InAppReviewTools extends StatefulWidget {
 }
 
 class _InAppReviewToolsState extends State<InAppReviewTools> {
-  final InAppReview _inAppReview = InAppReview.instance;
+  //final InAppReview _inAppReview = InAppReview.instance;
 
   String _appStoreId = '';
   String _microsoftStoreId = '';
@@ -23,16 +23,16 @@ class _InAppReviewToolsState extends State<InAppReviewTools> {
 
     (<T>(T? o) => o!)(WidgetsBinding.instance).addPostFrameCallback((_) async {
       try {
-        final isAvailable = await _inAppReview.isAvailable();
+        //final isAvailable = await _inAppReview.isAvailable();
 
-        setState(() {
-          // This plugin cannot be tested on Android by installing your app
-          // locally. See https://github.com/britannio/in_app_review#testing for
-          // more information.
-          _availability = isAvailable && !checkPlatform.isAndroid
-              ? Availability.available
-              : Availability.unavailable;
-        });
+        // setState(() {
+        //   // This plugin cannot be tested on Android by installing your app
+        //   // locally. See https://github.com/britannio/in_app_review#testing for
+        //   // more information.
+        //   _availability = isAvailable && !checkPlatform.isAndroid
+        //       ? Availability.available
+        //       : Availability.unavailable;
+        // });
       } catch (_) {
         setState(() => _availability = Availability.unavailable);
       }
@@ -43,12 +43,12 @@ class _InAppReviewToolsState extends State<InAppReviewTools> {
 
   void _setMicrosoftStoreId(String id) => _microsoftStoreId = id;
 
-  Future<void> _requestReview() => _inAppReview.requestReview();
-
-  Future<void> _openStoreListing() => _inAppReview.openStoreListing(
-    appStoreId: _appStoreId,
-    microsoftStoreId: _microsoftStoreId,
-  );
+  // Future<void> _requestReview() => _inAppReview.requestReview();
+  //
+  // Future<void> _openStoreListing() => _inAppReview.openStoreListing(
+  //   appStoreId: _appStoreId,
+  //   microsoftStoreId: _microsoftStoreId,
+  // );
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -67,14 +67,14 @@ class _InAppReviewToolsState extends State<InAppReviewTools> {
               onChanged: _setMicrosoftStoreId,
               decoration: const InputDecoration(hintText: 'Microsoft Store ID'),
             ),
-            ElevatedButton(
-              onPressed: _requestReview,
-              child: const Text('Request Review'),
-            ),
-            ElevatedButton(
-              onPressed: _openStoreListing,
-              child: const Text('Open Store Listing'),
-            ),
+            // ElevatedButton(
+            //   onPressed: _requestReview,
+            //   child: const Text('Request Review'),
+            // ),
+            // ElevatedButton(
+            //   onPressed: _openStoreListing,
+            //   child: const Text('Open Store Listing'),
+            // ),
           ],
         ),
       ),

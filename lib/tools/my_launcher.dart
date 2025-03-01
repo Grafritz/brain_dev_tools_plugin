@@ -1,20 +1,20 @@
 import 'package:brain_dev_tools/tools/constant.dart';
 import 'package:brain_dev_tools/tools/tools_log.dart';
-import 'package:external_app_launcher/external_app_launcher.dart';
+// import 'package:external_app_launcher/external_app_launcher.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 //import 'my_external_app_launcher.dart';
 
 class MyLauncher {
-  static Future isAppLSBInstalled() async {
+  /*static Future isAppLSBInstalled() async {
     try {
-      var isAppInstalledResult = await LaunchApp.isAppInstalled(
-        androidPackageName: Constant.packageLaSainteBible,
-        iosUrlScheme: '${Constant.packageLaSainteBible}://',
-        // openStore: false
-      );
-      logCat('isAppInstalledResult => $isAppInstalledResult ${isAppInstalledResult.runtimeType}');
+      // var isAppInstalledResult = await LaunchApp.isAppInstalled(
+      //   androidPackageName: Constant.packageLaSainteBible,
+      //   iosUrlScheme: '${Constant.packageLaSainteBible}://',
+      //   // openStore: false
+      // );
+      //logCat('isAppInstalledResult => $isAppInstalledResult ${isAppInstalledResult.runtimeType}');
     } catch (ex) {
       logError(ex);
       await launchInBrowser(Constant.urlAppleOrGoogleStoreLSB());
@@ -23,13 +23,13 @@ class MyLauncher {
 
   static Future openAppLSB() async {
     try {
-      await LaunchApp.openApp(
-        androidPackageName: Constant.packageLaSainteBible,
-        //iosUrlScheme: 'labible.grafritz.com://',
-        //'${Constant.packageLaSainteBible}://',
-        appStoreLink: Constant.urlAppleStoreLSB,
-        //openStore: false
-      );
+      // await LaunchApp.openApp(
+      //   androidPackageName: Constant.packageLaSainteBible,
+      //   //iosUrlScheme: 'labible.grafritz.com://',
+      //   //'${Constant.packageLaSainteBible}://',
+      //   appStoreLink: Constant.urlAppleStoreLSB,
+      //   //openStore: false
+      // );
     } catch (ex) {
       logError(ex);
       await launchInBrowser(Constant.urlAppleOrGoogleStoreLSB());
@@ -38,17 +38,17 @@ class MyLauncher {
 
   static Future openAppCCG() async {
     try {
-      await LaunchApp.openApp(
-        androidPackageName: Constant.packageChantChoraleEtGroupe,
-        iosUrlScheme: '${Constant.packageLaSainteBible}://',
-        appStoreLink: Constant.urlAppleStoreLSB,
-        //openStore: true
-      );
+      // await LaunchApp.openApp(
+      //   androidPackageName: Constant.packageChantChoraleEtGroupe,
+      //   iosUrlScheme: '${Constant.packageLaSainteBible}://',
+      //   appStoreLink: Constant.urlAppleStoreLSB,
+      //   //openStore: true
+      // );
     } catch (ex) {
       logError(ex);
       await launchInBrowser(Constant.urlAppleOrGoogleStoreLSB());
     }
-  }
+  }*/
 
   static Future<void> launchInBrowser(String url) async {
     if (!await launchUrl(
