@@ -13,8 +13,8 @@ class InAppReviewTools extends StatefulWidget {
 class _InAppReviewToolsState extends State<InAppReviewTools> {
   //final InAppReview _inAppReview = InAppReview.instance;
 
-  String _appStoreId = '';
-  String _microsoftStoreId = '';
+  // String _appStoreId = '';
+  // String _microsoftStoreId = '';
   Availability _availability = Availability.loading;
 
   @override
@@ -39,9 +39,9 @@ class _InAppReviewToolsState extends State<InAppReviewTools> {
     });
   }
 
-  void _setAppStoreId(String id) => _appStoreId = id;
-
-  void _setMicrosoftStoreId(String id) => _microsoftStoreId = id;
+  // void _setAppStoreId(String id) => _appStoreId = id;
+  //
+  // void _setMicrosoftStoreId(String id) => _microsoftStoreId = id;
 
   // Future<void> _requestReview() => _inAppReview.requestReview();
   //
@@ -59,14 +59,14 @@ class _InAppReviewToolsState extends State<InAppReviewTools> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text('In App Review status: ${_availability.name}'),
-            TextField(
-              onChanged: _setAppStoreId,
-              decoration: const InputDecoration(hintText: 'App Store ID'),
-            ),
-            TextField(
-              onChanged: _setMicrosoftStoreId,
-              decoration: const InputDecoration(hintText: 'Microsoft Store ID'),
-            ),
+            // TextField(
+            //   onChanged: _setAppStoreId,
+            //   decoration: const InputDecoration(hintText: 'App Store ID'),
+            // ),
+            // TextField(
+            //   onChanged: _setMicrosoftStoreId,
+            //   decoration: const InputDecoration(hintText: 'Microsoft Store ID'),
+            // ),
             // ElevatedButton(
             //   onPressed: _requestReview,
             //   child: const Text('Request Review'),
