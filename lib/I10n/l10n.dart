@@ -115,8 +115,8 @@ class L10n {
         return codeAnglais;
       case Langue.espagnole:
         return codeEspagnole;
-      default:
-        return L10n.codeFrancais;
+      //default:
+      //  return L10n.codeFrancais;
     }
   }
 }

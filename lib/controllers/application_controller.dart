@@ -17,7 +17,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:in_app_update/in_app_update.dart';
-//import 'package:in_app_update/in_app_update.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -337,12 +336,12 @@ class ApplicationController extends GetxController implements GetxService {
     try {
       if (CheckPlatform().isAndroid) {
         AppUpdateInfo? updateInfo = await InAppUpdate.checkForUpdate();
-        if( updateInfo!=null ) {
+        //if( updateInfo==null ) {
           if (updateInfo.updateAvailability == UpdateAvailability.updateAvailable) {
             await InAppUpdate.startFlexibleUpdate();
             return;
           }
-        }
+        //}
       }
       await checkUpdateOnServer();
       return;

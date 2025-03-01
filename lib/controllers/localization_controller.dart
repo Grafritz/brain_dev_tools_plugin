@@ -5,8 +5,6 @@ import 'package:brain_dev_tools/config/app_config.dart';
 import 'package:brain_dev_tools/views/language_dialog.dart';
 import 'package:brain_dev_tools/models/language_model.dart';
 import 'package:brain_dev_tools/tools/constant.dart';
-import 'package:brain_dev_tools/tools/global_preference.dart';
-import 'package:brain_dev_tools/tools/tools_log.dart';
 import 'package:brain_dev_tools/tools/validation/type_safe_conversion.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -47,7 +45,7 @@ class LocalizationController extends GetxController {
     update();
   }
 
-  getPreferredLanguage() async {
+  /*getPreferredLanguage() async {
     try {
       bool isFirstLoad = await globalPreference.getIsFirstLoad();
       if (isFirstLoad) {
@@ -60,9 +58,9 @@ class LocalizationController extends GetxController {
     } catch (ex, trace) {
       logError(ex, trace: trace, position: 'initState');
     }
-  }
+  }*/
 
-  getIsLanguageSysteme({required bool isFirstLoad}) async {
+  /*getIsLanguageSysteme({required bool isFirstLoad}) async {
     try {
       //logCat('getIsLanguageSysteme: isFirstLoad:: $isFirstLoad');
       bool isLanguageSysteme = await globalPreference.getIsLanguageSysteme();
@@ -83,7 +81,7 @@ class LocalizationController extends GetxController {
     } catch (ex, trace) {
       logError(ex, trace: trace, position: 'initState');
     }
-  }
+  }*/
 
   void loadCurrentLanguage() async {
     _locale = Locale(

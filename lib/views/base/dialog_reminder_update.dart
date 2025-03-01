@@ -2,7 +2,6 @@ import 'package:brain_dev_tools/models/security/device_app_version_model.dart';
 import 'package:brain_dev_tools/tools/constant.dart';
 import 'package:brain_dev_tools/tools/my_elevated_button.dart';
 import 'package:brain_dev_tools/tools/my_launcher.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
