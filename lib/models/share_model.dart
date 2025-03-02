@@ -15,7 +15,7 @@ import 'package:brain_dev_tools/tools/validation/sanitizer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
-import 'package:launch_app_store/launch_app_store.dart';
+// import 'package:launch_app_store/launch_app_store.dart';
 import 'package:path/path.dart';// show join;
 import 'package:path_provider/path_provider.dart';
 import 'package:share_plus/share_plus.dart';
@@ -143,7 +143,7 @@ class ShareModel {
 //region [ Rate App ]
   static launchReviewApp() {
     String packageName = Get.find<ApplicationController>().packageInfo.packageName;
-    LaunchReview.launch( androidAppId: packageName, iOSAppId: Constant.appStoreIdIdentifierCCG);
+    // LaunchReview.launch( androidAppId: packageName, iOSAppId: Constant.appStoreIdIdentifierCCG);
   }
 //endregion
 

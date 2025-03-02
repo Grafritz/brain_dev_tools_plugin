@@ -1,6 +1,6 @@
 name: brain_dev_tools
 description: "brain_dev_tools est un plugin tout-en-un conçu pour simplifier le développement Flutter en regroupant plusieurs utilitaires essentiels en un seul package. Il inclut des outils pour la gestion des dates, le stockage local, la manipulation de chaînes, les conversions de données et bien plus encore. Idéal pour les développeurs cherchant à optimiser leur code avec des fonctions réutilisables et performantes."
-version: 1.0.1+1
+version: 1.0.2
 homepage: https://github.com/Grafritz/brain_dev_tools_plugin.git
 
 #  dart pub publish --dry-run   #// Vérifier avant chaque nouvelle version
@@ -37,7 +37,7 @@ dependencies:
   #in_app_review: ^2.0.10
   in_app_update: ^4.2.3 #Only Android
   intl: ^0.19.0
-  launch_app_store: ^1.1.2
+#  launch_app_store: ^1.1.2
   package_info_plus: ^8.3.0
 
   path: ^1.9.1 # A cause Plugin

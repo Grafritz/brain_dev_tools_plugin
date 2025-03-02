@@ -1,3 +1,6 @@
+## 1.0.2
+- Remove launch_app_store
+
 ## 1.0.1+1
 - Remove in_app_review
 - Remove InAppReviewTools
