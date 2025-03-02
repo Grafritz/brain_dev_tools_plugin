@@ -6,7 +6,7 @@ import 'dart:typed_data';
 import 'dart:ui' as ui;
 
 import 'package:brain_dev_tools/I10n/localization_constants.dart';
-import 'package:brain_dev_tools/controllers/application_controller.dart';
+// import 'package:brain_dev_tools/controllers/application_controller.dart';
 import 'package:brain_dev_tools/dao/entities/properties/la_bible/plan_de_lecture/pdl_share_property.dart';
 import 'package:brain_dev_tools/tools/constant.dart';
 import 'package:brain_dev_tools/tools/tools_log.dart';
