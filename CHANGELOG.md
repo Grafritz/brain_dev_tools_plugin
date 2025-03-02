@@ -1,3 +1,6 @@
+## 1.0.3
+- Add property [isShowBrainBanner=true]  Brain Dev for show add without internet.
+
 ## 1.0.2
 - Remove launch_app_store
 

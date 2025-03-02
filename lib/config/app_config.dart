@@ -116,6 +116,7 @@ class AppConfig
 
 class GoogleAdsModel
 {
+  bool isShowBrainBanner = true;
   //Android
   String? appIdAdMobAndroid;
   String? appOpenAdMobAndroid;
@@ -134,6 +135,7 @@ class GoogleAdsModel
   String? natifAdvancedAdMobIOS;
 
   GoogleAdsModel({
+    this.isShowBrainBanner=true,
     //Android
     this.appIdAdMobAndroid,
     this.appOpenAdMobAndroid,
@@ -154,6 +156,7 @@ class GoogleAdsModel
 
   factory GoogleAdsModel.fromJson(Map<String, dynamic> map) {
     GoogleAdsModel obj = GoogleAdsModel();
+    obj.isShowBrainBanner = TypeSafeConversion.nullSafeBool(map['isShowBrainBanner']);
     //Android
     obj.appIdAdMobAndroid = TypeSafeConversion.nullSafeString(map['appIdAdMobAndroid']);
     obj.appOpenAdMobAndroid = TypeSafeConversion.nullSafeString(map['appOpenAdMobAndroid']);
@@ -174,6 +177,7 @@ class GoogleAdsModel
   }
 
   Map<String, dynamic> toJson() => {
+    'isShowBrainBanner': isShowBrainBanner,
   //Android
   'appIdAdMobAndroid': appIdAdMobAndroid,
   'appOpenAdMobAndroid': appOpenAdMobAndroid,
