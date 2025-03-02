@@ -10,7 +10,7 @@ var sTitre = TextStyle(
   fontFamily: 'Brandon',
   fontSize: 10,
   fontStyle: FontStyle.italic,
-  color: Colors.black.withOpacity(0.7),
+  color: Colors.black,//.withOpacity(0.7),
 );
 var titlePlandeLecture = TextStyle(
     fontSize: 20,

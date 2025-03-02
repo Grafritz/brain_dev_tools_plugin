@@ -142,7 +142,7 @@ class ShareModel {
 
 //region [ Rate App ]
   static launchReviewApp() {
-    String packageName = Get.find<ApplicationController>().packageInfo.packageName;
+    //String packageName = Get.find<ApplicationController>().packageInfo.packageName;
     // LaunchReview.launch( androidAppId: packageName, iOSAppId: Constant.appStoreIdIdentifierCCG);
   }
 //endregion
