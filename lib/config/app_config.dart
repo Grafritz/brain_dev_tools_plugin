@@ -57,17 +57,17 @@ class SetUpEnvironment
 
 class EnvironmentVariable
 {
-  static String get name => FlavorConfig.instance.name??'';
-  static String get appName => flavorConfigVariables(variableName: ApiVariables.appName);
+  static String get name => TypeSafeConversion.nullSafeString(FlavorConfig.instance.name);
+  static String get appName => TypeSafeConversion.nullSafeString( flavorConfigVariables(variableName: ApiVariables.appName));
   static ImageModel get appImage => flavorConfigVariables(variableName: ApiVariables.appImage);
   static List<LanguageModel> get appLanguages => flavorConfigVariables(variableName: ApiVariables.appLanguages);
-  static String get assetsPathLanguage => flavorConfigVariables(variableName: ApiVariables.assetsPathLanguage);
-  static String get assetsPathLanguageToMerge => flavorConfigVariables(variableName: ApiVariables.assetsPathLanguageToMerge);
-  static String get urlWebServer => flavorConfigVariables(variableName: ApiVariables.urlWebServer);
-  static String get urlApiServer => flavorConfigVariables(variableName: ApiVariables.urlApiServer);
+  static String get assetsPathLanguage => TypeSafeConversion.nullSafeString( flavorConfigVariables(variableName: ApiVariables.assetsPathLanguage));
+  static String get assetsPathLanguageToMerge => TypeSafeConversion.nullSafeString( flavorConfigVariables(variableName: ApiVariables.assetsPathLanguageToMerge));
+  static String get urlWebServer => TypeSafeConversion.nullSafeString( flavorConfigVariables(variableName: ApiVariables.urlWebServer));
+  static String get urlApiServer => TypeSafeConversion.nullSafeString( flavorConfigVariables(variableName: ApiVariables.urlApiServer));
   static EnumEnvironmentType get environmentType => flavorConfigVariables(variableName: ApiVariables.environmentType);
-  static bool get isConnectionRequired => flavorConfigVariables(variableName: ApiVariables.isConnectionRequired);
-  static bool get isBibleActive => flavorConfigVariables(variableName: ApiVariables.isBibleActive);
+  static bool get isConnectionRequired => TypeSafeConversion.nullSafeBool( flavorConfigVariables(variableName: ApiVariables.isConnectionRequired));
+  static bool get isBibleActive => TypeSafeConversion.nullSafeBool(flavorConfigVariables(variableName: ApiVariables.isBibleActive));
   static EnumTemplateLogin get templateLogin => flavorConfigVariables(variableName: ApiVariables.templateLogin);
   static EndPointApiModel get endPointApi => flavorConfigVariables(variableName: ApiVariables.endPointApi);
   static GoogleAdsModel get googleAds => flavorConfigVariables(variableName: ApiVariables.googleAds);

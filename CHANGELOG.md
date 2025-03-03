@@ -1,3 +1,7 @@
+## 1.0.4
+- Fix Bug. 
+- Unhandled Exception: type 'Null' is not a subtype of type 'String'
+
 ## 1.0.3
 - Add property [isShowBrainBanner=true]  Brain Dev for show add without internet.
 
