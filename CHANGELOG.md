@@ -1,5 +1,8 @@
+`## 1.0.5
+- Fix function Custom Image
+`
 ## 1.0.4
-- Fix Bug. 
+- Fix Bug.
 - Unhandled Exception: type 'Null' is not a subtype of type 'String'
 
 ## 1.0.3

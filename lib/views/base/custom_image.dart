@@ -72,7 +72,11 @@ class CustomImage extends StatelessWidget {
       return Image.memory(base64Decode(imageUrl), width: width,
           height: height, fit: BoxFit.cover);
     }
-    return Image.asset(imageUrl, width: width, height: height, fit: BoxFit.cover);
+
+    if(imageUrl.contains('assets/')){
+      return Image.asset(imageUrl, width: width, height: height, fit: BoxFit.cover);
+    }
+    return Image.asset(placeholder.isEmpty ? ImageIconResources.placeholder : placeholder, width: width, height: height, fit: BoxFit.cover);
   }
 }
 
