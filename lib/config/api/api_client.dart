@@ -156,7 +156,7 @@ class ApiClient extends GetxService {
       uriPath = uriPath.replace(queryParameters: data.toJson());
     }
     logCat('URL: [GET]: $fName .::. $uriPath');
-    var response = await http.get(uriPath, headers: _mainHeaders);
+    var response = await http.get(uriPath, headers: _getHeaders());
     logCat(
         'URL: [GET]: $fName .::. $uriPath :: statusCode: ${response.statusCode}');
     return response;

@@ -1,3 +1,6 @@
+## 1.0.7
+- Update ApiClient
+  - Edit GetData(???)
 ## 1.0.6
 - Update Packages...
 
