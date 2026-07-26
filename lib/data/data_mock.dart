@@ -1,6 +1,6 @@
 
 import 'package:brain_dev_tools/models/language_model.dart';
-import 'package:brain_dev_tools/tools/Enum/enum.dart';
+import 'package:brain_dev_tools/tools/enum/enum.dart';
 import 'package:brain_dev_tools/tools/key_value_model.dart';
 import 'package:get/get.dart';
 

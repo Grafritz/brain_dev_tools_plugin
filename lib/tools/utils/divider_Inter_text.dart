@@ -1,7 +1,7 @@
 // ignore_for_file: file_names
 
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:brain_dev_tools/tools/Enum/enum.dart';
+import 'package:brain_dev_tools/tools/enum/enum.dart';
 import 'package:brain_dev_tools/views/base/show_case_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

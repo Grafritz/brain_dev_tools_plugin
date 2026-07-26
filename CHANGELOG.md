@@ -1,4 +1,7 @@
 
+## 1.0.10
+- Fix import casse: tools/Enum/ → tools/enum/ (Linux case-sensitive)
+
 ## 1.0.9
 - Fix bug MaterialColor
 
