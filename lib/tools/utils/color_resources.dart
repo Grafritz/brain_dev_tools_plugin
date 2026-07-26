@@ -54,21 +54,24 @@ class ColorResources {
   static Color ccgColor = Colors.deepOrange;
   static Color chantDesperanceColor = Colors.indigo;
   static Color chantDesperanceLegacyColor = chantDesperanceColor;//Colors.red;
+
+  static Color chantLyricColor = Colors.brown;
+
   static Color secondaryColor = const Color(0xFFE0EC53);
 
   static Color getColorAppOrYours({dynamic color = Colors.white}){
     return (Get.find<ThemeController>().isBrightnessDark) ? color : Theme.of(Get.context!).primaryColorDark;//getDefaultColorApp();
   }
-  static Color getDefaultColorApp() {
+  static dynamic getDefaultColorApp() {
     switch(EnvironmentVariable.environmentType) {
       case EnumEnvironmentType.chantdesperance:
         return chantDesperanceColor;
       case EnumEnvironmentType.chantdesperancelegacy:
         return chantDesperanceLegacyColor;
+      case EnumEnvironmentType.lyricevangelique:
+        return chantLyricColor;
       case EnumEnvironmentType.chantchoraleetgroupe:
       case EnumEnvironmentType.chantlyric:
-      case EnumEnvironmentType.lyricevangelique:
-        return ccgColor;
       default:
         return ccgColor;
     }

@@ -1,5 +1,6 @@
 import 'package:brain_dev_tools/config/app_config.dart';
 import 'package:brain_dev_tools/tools/enum/enum.dart';
+import 'package:brain_dev_tools/tools/utils/color_resources.dart';
 import 'package:brain_dev_tools/tools/utils/image_icon_resources.dart';
 import 'package:brain_dev_tools/views/color_theme_dialog.dart';
 import 'package:brain_dev_tools/tools/constant.dart';
@@ -85,7 +86,7 @@ class ThemeController extends GetxController {
 
   //region MaterialColor colorTheme
   MaterialColor? get colorTheme => !Get.isDarkMode ? _colorTheme : null;
-  MaterialColor _colorTheme = Colors.deepOrange;
+  MaterialColor _colorTheme = ColorResources.getDefaultColorApp();//Colors.deepOrange;
 
   set colorThemeData(MaterialColor color) {
     _colorTheme = color;
