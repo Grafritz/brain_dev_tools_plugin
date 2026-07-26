@@ -84,11 +84,11 @@ class ThemeController extends GetxController {
   }
   //endregion
 
-  //region MaterialColor colorTheme
-  MaterialColor? get colorTheme => !Get.isDarkMode ? _colorTheme : null;
-  MaterialColor _colorTheme = ColorResources.getDefaultColorApp();//Colors.deepOrange;
+  //region Color colorTheme
+  Color? get colorTheme => !Get.isDarkMode ? _colorTheme : null;
+  Color _colorTheme = ColorResources.getDefaultColorApp();//Colors.deepOrange;
 
-  set colorThemeData(MaterialColor color) {
+  set colorThemeData(Color color) {
     _colorTheme = color;
     update();
   }
@@ -167,7 +167,7 @@ class ThemeController extends GetxController {
 
   //region MaterialColor colorTheme
   MaterialColor colorTheme2 = MyColors.primaryColor[1]; //Colors.deepOrange;
-  MaterialColor get colorTheme1 => _colorTheme;
+  Color get colorTheme1 => _colorTheme;
 
   getPrimaryColorSwatch() {
     int color = sharedPreferences.getInt("primaryColorSwatch") ?? 1;
