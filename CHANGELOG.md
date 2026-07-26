@@ -1,4 +1,8 @@
 
+## 1.0.11
+- Fix import casse: tools/Enum/ → tools/enum/ dans divider_Inter_text.dart et data_mock.dart
+- Fix import casse: Repository/ → repository/ dans brain_dev_notification
+
 ## 1.0.10
 - Fix import casse: tools/Enum/ → tools/enum/ (Linux case-sensitive)
 
