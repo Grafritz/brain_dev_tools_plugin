@@ -1,46 +1,36 @@
-
 import 'package:brain_dev_tools/config/app_config.dart';
 
+/// Adresses communes aux plugins. **Le Middleware LyricStream est la seule origine** : l'ancienne API (`api.ccg.*`) n'est
+/// plus référencée (décision 15 du 2026-11-02).
 class ApiConstantDev {
   // pagination settings
   // the number of recipes to load per page
   static const perPage = 10;
 
-  static String get urlServerImageNotification => '$urlApiServer/image/notification';
-  static String apiV1 = 'api/v1';
-  static String apiV2 = 'api/v2';
+  /// Origine du Middleware LyricStream (avec « / » final).
+  static String get urlMiddleware => EnvironmentVariable.urlMiddlewareServer;
 
-  //static String get urlWebServer => urlQAApiServerCCG;
+  /// Mon compte : `GET` lit mon profil, `DELETE` supprime mon compte et mes données privées.
+  static String get urlMiddlewareMe => '${urlMiddleware}api/users/me';
 
-  static String get urlWebServer {
-    return EnvironmentVariable.urlWebServer;
+  /// `PUT` : met à jour mon profil.
+  static String get urlMiddlewareMyProfile => '$urlMiddlewareMe/profile';
+
+  /// Appareils (jetons FCM) de l'utilisateur connecté : `PUT` enregistre ou renouvelle, `DELETE /<jeton>` retire.
+  static String get urlMiddlewareDevices => '${urlMiddleware}api/notifications/devices';
+
+  /// Réglages publics (politique de confidentialité, conditions d'utilisation).
+  static String get urlMiddlewareSettings => '${urlMiddleware}api/settings';
+
+  /// Fiche de version d'une application (`GET`, public). [platform] (`android` ou `ios`) choisit la fiche de la
+  /// plateforme : une mise à jour d'une seule plateforme ne doit pas toucher l'autre. Sans plateforme (ou vide), le
+  /// serveur renvoie la fiche « toutes plateformes », celle que lisent aussi les versions déjà installées.
+  static String urlMiddlewareAppVersion({required String packageName, String? platform}) {
+    final base = '${urlMiddleware}api/app-versions/${Uri.encodeComponent(packageName)}';
+    return (platform == null || platform.isEmpty) ? base : '$base?platform=${Uri.encodeQueryComponent(platform)}';
   }
-  static String get urlApiServer {
-    return EnvironmentVariable.urlApiServer;
-  }
 
-  //region [ Urls settings ]
-  static String urlApiSettings = '$urlApiServer${EnvironmentVariable.endPointApi.settings}';
-  //endregion
-
-  //region [ Urls User ]
-  static String urlApiDeviceToken = '$urlApiServer${EnvironmentVariable.endPointApi.deviceToken}';
-  static String apiUrlSetDeviceToken = '$urlApiServer${EnvironmentVariable.endPointApi.setDeviceToken}';
-  static String apiUrlRefreshDeviceToken = '$urlApiServer${EnvironmentVariable.endPointApi.refreshDeviceToken}';
-  static String urlApiDeviceAppVersion({packageName}) => '$urlApiServer$apiV1/DeviceAppVersion/$packageName';
-  //endregion
-
-  //region [ Urls User ]
-  static String urlApiUser = '$urlApiServer${EnvironmentVariable.endPointApi.user}';
-  static String urlApiAutoAuthenticate = '$urlApiServer${EnvironmentVariable.endPointApi.autoAuthenticate}';
-  static String urlApiUpdateProfile = '$urlApiUser/update-profile';
-  static String urlApiLoginRegisterProvider = '$urlApiServer${EnvironmentVariable.endPointApi.login}';
-  static String urlApiDeleteAllDataUser = '$urlApiUser/deletealldata';
-  static String urlApiRegister = '$urlApiServer${EnvironmentVariable.endPointApi.register}';
-  static String urlApiUpdatePhotoProfile = '$urlApiUser/update-photo-profile';
-  static String urlApiUserByUserName({userName}) => '$urlApiUser/$userName';
-  static String urlApiGetProfilUserData({userName}) => '$urlApiUser/profile-info/$userName';
-  static String urlApiGetProfilPublicUserData({userName}) => '$urlApiUser/profile-public-info/$userName';
-  //endregion
-
+  /// Image d'une notification : une adresse absolue est gardée telle quelle ; un nom de fichier relatif (ancien stockage
+  /// du site historique) n'a plus d'équivalent et donne une adresse vide.
+  static String notificationImageUrl(String image) => image.startsWith('http') ? image : '';
 }

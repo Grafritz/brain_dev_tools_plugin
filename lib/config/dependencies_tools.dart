@@ -49,7 +49,7 @@ initBrainDevToolsDependencies() async
 
   Get.lazyPut(() => ApiClient(
         //firebaseMessaging: Get.find(),
-        appBaseUrl: ApiConstantDev.urlApiServer,
+        appBaseUrl: ApiConstantDev.urlMiddleware,
         sharedPreferences: Get.find(),
         uniqueId: Get.find(),
         deiceInfo: Get.find(),

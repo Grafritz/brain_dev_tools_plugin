@@ -56,10 +56,8 @@ class ApiVariables {
   static const String DEV = 'DEV';
   static const String QA = 'QA';
   static const String PROD = 'PROD';
-  static const String urlWebServer = 'urlWebServer';
   static const String urlServerLogin = 'urlServerLogin';
-  static const String urlApiServer = 'urlApiServer';
-  static const String endPointApi = 'endPointApi';
+  static const String urlMiddlewareServer = 'urlMiddlewareServer';
   static const String environmentType = 'environmentType';
   static const String appName = 'appName';
   static const String appImage = 'appImage';

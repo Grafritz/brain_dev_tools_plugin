@@ -46,6 +46,14 @@ class CheckPlatform {
 
   bool get isAndroid => defaultTargetPlatform == TargetPlatform.android;
 
+  /// Plateforme telle que la connaît la fiche de version du serveur (`android` ou `ios`) ; `null` ailleurs (web, bureau) :
+  /// le serveur renvoie alors la fiche « toutes plateformes ».
+  String? get versionSheetPlatform => isAndroid
+      ? 'android'
+      : isIOS
+          ? 'ios'
+          : null;
+
   bool get isLinux => defaultTargetPlatform == TargetPlatform.linux;
 
 //region [ initPackageState ]

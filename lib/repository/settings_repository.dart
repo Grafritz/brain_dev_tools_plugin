@@ -13,7 +13,7 @@ class SettingsRepository {
   // Get the privacy policy from the backend
   Future fetchSettings() async {
     try {
-      String apiUrl = ApiConstantDev.urlApiSettings;
+      String apiUrl = ApiConstantDev.urlMiddlewareSettings;
       var response = await apiClient.getData(apiUrl, fName: 'fetchSettings');
       if (response.statusCode == HttpStatus.ok) {
         return settingsFromJson(response.body);

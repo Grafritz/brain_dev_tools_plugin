@@ -43,13 +43,11 @@ class SetUpEnvironment
     ApiVariables.appLanguages: appConfig.appLanguages,
     ApiVariables.assetsPathLanguage: appConfig.assetsPathLanguage,
     ApiVariables.assetsPathLanguageToMerge: appConfig.assetsPathLanguageToMerge,
-    ApiVariables.urlWebServer: appConfig.urlWebServer,
-    ApiVariables.urlApiServer: appConfig.urlApiServer,
+    ApiVariables.urlMiddlewareServer: appConfig.urlMiddlewareServer,
     ApiVariables.environmentType: appConfig.enumEnvironmentType,
     ApiVariables.templateLogin: appConfig.templateLogin,
     ApiVariables.isConnectionRequired: appConfig.isConnectionRequired,
     ApiVariables.isBibleActive: appConfig.isBibleActive,
-    ApiVariables.endPointApi: appConfig.endPointApi,
     ApiVariables.googleAds: appConfig.googleAds,
     ApiVariables.firebaseOptions: appConfig.firebaseOptions,
   };
@@ -63,13 +61,12 @@ class EnvironmentVariable
   static List<LanguageModel> get appLanguages => flavorConfigVariables(variableName: ApiVariables.appLanguages);
   static String get assetsPathLanguage => TypeSafeConversion.nullSafeString( flavorConfigVariables(variableName: ApiVariables.assetsPathLanguage));
   static String get assetsPathLanguageToMerge => TypeSafeConversion.nullSafeString( flavorConfigVariables(variableName: ApiVariables.assetsPathLanguageToMerge));
-  static String get urlWebServer => TypeSafeConversion.nullSafeString( flavorConfigVariables(variableName: ApiVariables.urlWebServer));
-  static String get urlApiServer => TypeSafeConversion.nullSafeString( flavorConfigVariables(variableName: ApiVariables.urlApiServer));
+  /// Origine du Middleware LyricStream (ex. `https://middleware.lyricstream.app/`), avec « / » final : la seule origine de l'API.
+  static String get urlMiddlewareServer => TypeSafeConversion.nullSafeString( flavorConfigVariables(variableName: ApiVariables.urlMiddlewareServer));
   static EnumEnvironmentType get environmentType => flavorConfigVariables(variableName: ApiVariables.environmentType);
   static bool get isConnectionRequired => TypeSafeConversion.nullSafeBool( flavorConfigVariables(variableName: ApiVariables.isConnectionRequired));
   static bool get isBibleActive => TypeSafeConversion.nullSafeBool(flavorConfigVariables(variableName: ApiVariables.isBibleActive));
   static EnumTemplateLogin get templateLogin => flavorConfigVariables(variableName: ApiVariables.templateLogin);
-  static EndPointApiModel get endPointApi => flavorConfigVariables(variableName: ApiVariables.endPointApi);
   static GoogleAdsModel get googleAds => flavorConfigVariables(variableName: ApiVariables.googleAds);
   static Map<String, Map<String, String>> get appTranslator => AssetsLocaleL10n.appTranslator();
   static dynamic get firebaseOptions => flavorConfigVariables(variableName: ApiVariables.firebaseOptions);
@@ -82,14 +79,13 @@ class EnvironmentVariable
 class AppConfig
 {
   String appName;
-  String urlWebServer;
-  String urlApiServer;
+  /// Origine du Middleware LyricStream, avec « / » final : la seule origine de l'API.
+  String urlMiddlewareServer;
   ImageModel appImage;
   EnumEnvironmentType enumEnvironmentType;
   EnumTemplateLogin templateLogin;// = EnumTemplateLogin.template1;
   bool isConnectionRequired=true;
   bool isBibleActive=false;
-  EndPointApiModel endPointApi;
   GoogleAdsModel googleAds;
   List<LanguageModel> appLanguages = L10n.languages_en_fr_es_ht;
   String assetsPathLanguage='assets/locale';
@@ -102,12 +98,10 @@ class AppConfig
     required this.appLanguages,
     this.assetsPathLanguage='assets/locale',
     this.assetsPathLanguageToMerge='',
-    required this.urlWebServer,
-    required this.urlApiServer,
+    this.urlMiddlewareServer = '',
     required this.enumEnvironmentType,
     this.isConnectionRequired=true,
     this.isBibleActive=false,
-    required this.endPointApi,
     required this.googleAds,
     this.templateLogin = EnumTemplateLogin.template1,
     this.firebaseOptions
@@ -232,56 +226,5 @@ class ImageModel
     'logoSquareDark': logoSquareDark,
     'bgImageLight': bgImageLight,
     'bgImageDark': bgImageDark,
-  };
-}
-
-class EndPointApiModel
-{
-  String user;
-  String login;
-  String register;
-  String forgetPassword;
-  String settings;
-  String autoAuthenticate;
-  String deviceToken;
-  String setDeviceToken;
-  String refreshDeviceToken;
-
-  EndPointApiModel({
-    this.user               = '/api/v1/user',
-    this.login              = '/api/v1/user/login-register-provider',
-    this.register           = '/api/v1/user/register',
-    this.autoAuthenticate   = '/api/v1/user/auto-authenticate',
-    this.forgetPassword     = '/api/v1/user/',
-    this.settings           = '/api/v1/Settings',
-    this.deviceToken        = '/api/v1/deviceToken',
-    this.setDeviceToken     = '/api/v1/deviceToken/setDeviceToken',
-    this.refreshDeviceToken = '/api/v1/deviceToken/refreshDeviceToken',
-  });
-
-  factory EndPointApiModel.fromJson(Map<String, dynamic> map) {
-    EndPointApiModel obj = EndPointApiModel();
-    obj.user = TypeSafeConversion.nullSafeString(map['user']);
-    obj.login = TypeSafeConversion.nullSafeString(map['login']);
-    obj.register = TypeSafeConversion.nullSafeString(map['register']);
-    obj.forgetPassword = TypeSafeConversion.nullSafeString(map['forgetPassword']);
-    obj.settings = TypeSafeConversion.nullSafeString(map['settings']);
-    obj.autoAuthenticate = TypeSafeConversion.nullSafeString(map['autoAuthenticate']);
-    obj.deviceToken = TypeSafeConversion.nullSafeString(map['deviceToken']);
-    obj.setDeviceToken = TypeSafeConversion.nullSafeString(map['setDeviceToken']);
-    obj.refreshDeviceToken = TypeSafeConversion.nullSafeString(map['refreshDeviceToken']);
-    return obj;
-  }
-
-  Map<String, dynamic> toJson() => {
-    'user': user,
-    'login': login,
-    'register': register,
-    'forgetPassword': forgetPassword,
-    'settings': settings,
-    'autoAuthenticate': autoAuthenticate,
-    'deviceToken': deviceToken,
-    'setDeviceToken': setDeviceToken,
-    'refreshDeviceToken': refreshDeviceToken,
   };
 }

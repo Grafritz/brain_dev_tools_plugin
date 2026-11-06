@@ -107,7 +107,10 @@ class Constant {
 
   static String copyright() =>
       '©2015-${DateTime.now().year} Develop by JFDUVERS';
-  static const String USER_CONNECTED = "UserConnected20Sept2024";
+  // Changer le NOM de cette clé déconnecte tous les utilisateurs (l'ancienne session n'est plus retrouvée) sans toucher à
+  // la base SQLite : ne pas incrémenter `schemaVersion` pour cela (il recharge les tables). Historique :
+  // "UserConnected20Sept2024" (Firebase / ancienne API) -> "UserConnected01Nov2026" (passage à Keycloak).
+  static const String USER_CONNECTED = "UserConnected01Nov2026";
   static const String DEVICE_ID = "DEVICE_ID";
   static const String TOKEN = "TOKEN";
   static const String API_TOKEN = "API_TOKEN_20241206";
